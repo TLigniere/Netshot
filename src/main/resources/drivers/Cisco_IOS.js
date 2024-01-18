@@ -430,6 +430,10 @@ function snapshot(cli, device, config) {
 			device.set("family", "Cisco Catalyst 9500");
 			device.set("networkClass", "SWITCHROUTER");
 		}
+		else if (system.match(/cisco C10\d\d/)) {
+			device.set("family", "Cisco Catalyst 1000");
+			device.set("networkClass", "SWITCH");
+		}
 	}
 	var configRegister = showVersion.match(/^Configuration register is (.*)/m);
 	if (configRegister != null) {
